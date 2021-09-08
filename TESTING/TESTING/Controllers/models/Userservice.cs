@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace TESTING.Controllers.models
 {
 
+   
     public class Userservice : IUserservice
     {
-        List<Users> aa = new List<models.Users>
+        List<Users> listofusers = new List<models.Users>
         {
             new Users(1,"oday","059574","ooo",DateTime.Now),
             new Users(2,"uu","059574","ooao", DateTime.Now),
@@ -18,26 +19,29 @@ namespace TESTING.Controllers.models
         new Users(5,"oday","059574","ooo", DateTime.Now)
 
              };
-       
+       /// <summary>
+       /// delete [http post and get and delete]
+       /// </summary>
+       /// <param name="id"></param>
         public void Delete(int id)
         {
-            var z = aa.FirstOrDefault(i => i.Id == id);
-            aa.Remove(z);
+            var z = listofusers.FirstOrDefault(i => i.Id == id);
+            listofusers.Remove(z);
         }
        
         public List<Users> get()
         {
-            return aa;
+            return listofusers;
         }
        
         public Users get(int id)
         {
-            return aa.FirstOrDefault(i => i.Id == id);
+            return listofusers.FirstOrDefault(i => i.Id == id);
         }
        
         public void Post(Users user)
         {
-            aa.Add(user);
+            listofusers.Add(user);
         }
     }
 }

@@ -9,7 +9,9 @@ using TESTING.Controllers.models;
 namespace TESTING.Controllers
 {
     [ApiController]
+    ///Use api at URL
     [Route("api/[controller]")]
+    ///rename user controller
     public class UsersController : ControllerBase
     {
 
