@@ -18,23 +18,23 @@ namespace TESTING.Controllers.models
         new Users(5,"oday","059574","ooo", DateTime.Now)
 
              };
-        [HttpDelete("{id}")]
+       
         public void Delete(int id)
         {
             var z = aa.FirstOrDefault(i => i.Id == id);
             aa.Remove(z);
         }
-        [HttpGet]
+       
         public List<Users> get()
         {
             return aa;
         }
-        [HttpGet("{id}")]
+       
         public Users get(int id)
         {
             return aa.FirstOrDefault(i => i.Id == id);
         }
-        [HttpPost]
+       
         public void Post(Users user)
         {
             aa.Add(user);
